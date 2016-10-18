@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AutoMenus Help Doc</title>
+<style  type="text/css">
+body{
+	background:#334;
+	font-family:sans-serif;
+	font-size: 12px;
+	margin: 1em auto;
+}
+pre{ background-color:#fff; border:2px silver solid; margin:0 auto; padding:2em; width:800px; }
+</style>
+
+	<script src="cxAutoMenu.js"></script> <!-- contains menuLoad() -->
+</head>
+<body onload="menuLoad()">
+<div >
+<pre style='padding-bottom:0; '>
+AutoMenus Help Doc
+
+Purpose
+- dynamically load HTML for menus from an external HTML file
+- allow menus to be edited simply and have changes applied to existing HTML docs
+- speed generation of HTML documents by reducing redundant code
+
+
+Requirements
+1. expect autoMenu home folder off webserver root:
+	http://connexions.org/autoMenu/
+
+2. expect folder to contain HTML menu templates:
+	http://connexions.org/autoMenu/Templates
+
+3. customized autoMenu.js to load required HTML templates, example:
+	http://connexions.org/autoMenu/cxAutoMenu.js
+
+
+Procedure
+1. Insert into &lt;head&gt; section:
+	&lt;script src="/autoMenu/cxAutoMenu.js"&gt;&lt;/script&gt; &lt;!-- contains menuLoad() --&gt;
+
+2. Modify &lt;body&gt; tag:
+	&lt;body onload="menuLoad()"&gt;
+
+3. Insert &lt;div&gt; with custom ID attribute in &lt;body&gt; section:
+	&lt;div id="T_CxTopMenu"&gt;AutoMenu: insert T_TopMenu.html here&lt;/div&gt;
+
+4. Result
+</pre>
+	<div id="T_CxTopMenu">AutoMenu: insert T_TopMenu.html here</div>
+<pre style='padding-top:0; '>
+
+
+Notes
+- use this document as an example implementation
+- menu templates are are standard HTML files, so they can be edited/copied/... easily
+- CSS can be included in menu templates between &lt;div&gt; tags
+- Javscript in menu templates will not work--use an external .js file.  This appears to be a browser security feature.
+- example menu template: http://connexions.org/autoMenu/Templates/T_CxTopMenu.html
+
+
+Fin!
+</pre>
+
+
+</div>
+
+</body>
+</html>
