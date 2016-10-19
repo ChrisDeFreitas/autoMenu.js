@@ -12,6 +12,7 @@ How It Works
 1. When an HTML document is opened, an iframe is created to download a specific HTML file from the server.  The iframe is dynamically created and destroyed.  The file downloaded is the template.
 2. An HTML control is extracted from the template and inserted into the HTML document.  A customized load function specifies the control IDs and template filename.  The custom at this point is to use the template filename for all IDs.
 3. The HTML control may contain a STYLE section and other HTML controls.  At the time of this writing, Javascript is automatically removed by all browsers tested.
+4. HTML5 codes is used; no external libraries are required.  
 
 
 Requirements
