@@ -3,9 +3,9 @@ AutoMenu.js
 
 Purpose
 ---
-AutoMenu.js was created for the <a href="http://onnexions.org/SevenNews">Seven News Project</a> at <a href="http://connexions.org">Connexions.org</a>.  A need was identified to centralize the HTML and CSS of global menus to quickly apply changes to all web pages.  For Connexions.org this is a great savings because the slimmer web pages also reduce resource consumption when generating, deploying and backing up.
+AutoMenu.js was created for the <a href="http://onnexions.org/SevenNews">Seven News Project</a> at <a href="http://connexions.org">Connexions.org</a>.  A need was identified to centralize the HTML and CSS of global menus to quickly apply changes to all web pages.  For Connexions.org this is a great savings because the slimmer web pages also reduce resource consumption when generating, deploying and backing up web pages.
 
-Although the app was initially designed for menus, it will work with any HTML and CSS content.  For example, the page footers of the Seven News Project are loaded with this app.
+Although the app was initially designed for menus, it will work with any HTML and CSS content.  For example, the page footers of the <a href="http://onnexions.org/SevenNews">Seven News Project</a> are loaded with this app.
 
 How It Works
 ---
@@ -16,13 +16,13 @@ How It Works
 
 Requirements
 ---
-1. expect autoMenu home folder on webserver root:
+1. expect autoMenu home folder on webserver root:  
 	http://connexions.org/autoMenu/
 
-2. expect folder to contain HTML menu templates:
+2. expect folder to contain HTML menu templates:  
 	http://connexions.org/autoMenu/Templates
 
-3. customized autoMenu.js to load required HTML templates, example:
+3. customized autoMenu.js to load required HTML templates, example:  
 	http://connexions.org/autoMenu/7AutoMenu.js
 
 
@@ -30,16 +30,16 @@ Procedure
 ---
 Note, this procedure is for the Seven News project (and Connexions.org).  Others will have to create an HTML template and a customized autoMenu.js.
 
-1. Insert into HEAD section of HTML document:
-<p>```
+1. Insert into HEAD section of HTML document:  
+`
 	<script src="/autoMenu/7AutoMenu.js"></script> <!-- contains menuLoad() -->
-```
-2. Modify BODY tag:
-<p>`
+`
+2. Modify BODY tag:  
+`
 	<body onload="menuLoad()">
 `
-3. Insert DIV with custom ID attribute in BODY section:
-<p>`
+3. Insert DIV with custom ID attribute in BODY section:  
+`
 	<div id="T_7TopMenu">AutoMenu: insert T_7TopMenu.html here</div>
 `
 
@@ -56,5 +56,8 @@ Notes
 Thanks
 ---
 Atom Editor: https://atom.io/  
+Canada: https://www.canada.ca/  
+Connexions: http://connexions.org  
 GitHub: https://github.com/  
 Mozilla Developer Network: https://developer.mozilla.org/en-US/  
+
