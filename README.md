@@ -10,8 +10,8 @@ Although the app was initially designed for menus, it will work with any HTML an
 How It Works
 ---
 - When an HTML document is opened, an iframe is created to download a specific HTML file from the server.  The iframe is dynamically created and destroyed.  The file downloaded is the template.
-- An HTML control is extracted from the template and inserted into the HTML document.  A customized load function specifies the control IDs and template filename.  The custom at this point is to use the template filename for all IDs.
-- The HTML control may contain STYLE tags and other HTML controls.  At the time of this writing, SCRIPT tags are removed by all browsers tested.
+- An HTML control is extracted from the template and inserted into the HTML document.  A custom load function specifies the control IDs and template filename.  The practice, at this point, is to use the template filename for all IDs.
+- The imported HTML control may contain STYLE tags and other HTML controls.  At the time of this writing, SCRIPT tags are removed by all browsers tested.
 - The core functionality is provided by autoRuns.js/htmlImport() which should be altered for custom functionality by developers.
 - Implemented in HTML and Javascript, no external libraries are required.  
 
@@ -21,7 +21,7 @@ Requirements
 1. expect autoMenu home folder on webserver root:  
 	http://connexions.org/autoMenu/
 
-2. expect folder to contain HTML menu templates:  
+2. expect folder to contain HTML templates:  
 	http://connexions.org/autoMenu/Templates
 
 3. customized autoMenu.js to load required HTML templates, example:  
@@ -30,7 +30,7 @@ Requirements
 
 Procedure
 ---
-Note, this procedure is for the Seven News project (and Connexions.org).  Others will have to create an HTML template and a customized autoMenu.js.
+Note, this procedure is for the Seven News Project (and Connexions.org).  Others will have to create an HTML template and a custom autoMenu.js.
 
 1. Insert into HEAD section of HTML document:  
 `
@@ -48,7 +48,7 @@ Note, this procedure is for the Seven News project (and Connexions.org).  Others
 Notes
 ---
 - menu templates are standard HTML files, so they can be edited/copied/... easily
-- the exported HTML control may possess STYLE tags
+- the imported HTML control may contain STYLE tags
 - Javscript in templates will not load--use an external .js file.  
 - example Javascript document:  http://connexions.org/autoMenu/cxAutoMenu.js  
 - example menu template:  http://connexions.org/autoMenu/Templates/T_CxTopMenu.html
@@ -69,4 +69,3 @@ Author
 Chris DeFreitas  
 chrisd@europa.com  
 Fall 2016
-```
