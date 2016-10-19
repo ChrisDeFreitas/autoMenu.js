@@ -3,9 +3,9 @@ AutoMenu.js
 
 Purpose
 ---
-AutoMenu.js was created for the <a href="http://onnexions.org/SevenNews">Seven News Project</a> at <a href="http://connexions.org">Connexions.org</a>.  A need was identified to centralize the HTML and CSS of global menus to quickly apply changes to all web pages.  For Connexions.org this is a great savings because the slimmer web pages also reduce resource consumption when generating, deploying and backing up web pages.
+AutoMenu.js was created for the <a href="http://connexions.org/SevenNews">Seven News Project</a> at <a href="http://connexions.org">Connexions.org</a>.  A need was identified to centralize the HTML and CSS of global menus to quickly apply changes to all web pages.  For Connexions.org this is a great savings because the slimmer web pages also reduce resource consumption when generating, deploying and backing up web pages.
 
-Although the app was initially designed for menus, it will work with any HTML and CSS content.  For example, the page footers of the <a href="http://onnexions.org/SevenNews">Seven News Project</a> are loaded with this app.
+Although the app was initially designed for menus, it will work with any HTML and CSS content.  For example, the page footers of the <a href="http://connexions.org/SevenNews">Seven News Project</a> are loaded with this app.
 
 How It Works
 ---
