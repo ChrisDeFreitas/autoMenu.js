@@ -1,18 +1,19 @@
 AutoMenu.js
 ===
 
-Purpose
----
-AutoMenu.js was created for the <a href="http://connexions.org/SevenNews">Seven News Project</a> at <a href="http://connexions.org">Connexions.org</a>.  A need was identified to centralize the HTML and CSS of global menus to quickly apply changes to all web pages.  For Connexions.org this is a great savings because the slimmer web pages also reduce resource consumption when generating, deploying and backing up web pages.
+AutoMenus.js loads external HTML controls into a web page. The external controls exist in a separate web page.  This allows a complex control to be built and tested separately from the pages that use it.
+
+AutoMenu.js was created for the <a href="http://connexions.org/SevenNews">Seven News Project</a> at <a href="http://connexions.org">Connexions.org</a>.  A need was identified to centralize the HTML and CSS of global menus to quickly apply changes to all web pages.  For Connexions.org this is a great savings because the slimmer web pages also reduce resource consumption when generating, deploying and archiving web pages.
 
 Although the app was initially designed for menus, it will work with any HTML and CSS content.  For example, the page footers of the <a href="http://connexions.org/SevenNews">Seven News Project</a> are loaded with this app.
 
 How It Works
 ---
-1. When an HTML document is opened, an iframe is created to download a specific HTML file from the server.  The iframe is dynamically created and destroyed.  The file downloaded is the template.
-2. An HTML control is extracted from the template and inserted into the HTML document.  A customized load function specifies the control IDs and template filename.  The custom at this point is to use the template filename for all IDs.
-3. The HTML control may contain a STYLE section and other HTML controls.  At the time of this writing, Javascript is automatically removed by all browsers tested.
-4. HTML5 codes is used; no external libraries are required.  
+- When an HTML document is opened, an iframe is created to download a specific HTML file from the server.  The iframe is dynamically created and destroyed.  The file downloaded is the template.
+- An HTML control is extracted from the template and inserted into the HTML document.  A customized load function specifies the control IDs and template filename.  The custom at this point is to use the template filename for all IDs.
+- The HTML control may contain STYLE tags and other HTML controls.  At the time of this writing, SCRIPT tags are removed by all browsers tested.
+- The core functionality is provided by autoRuns.js/htmlImport() which should be altered for custom functionality by developers.
+- Implemented in HTML and Javascript, no external libraries are required.  
 
 
 Requirements
@@ -47,8 +48,8 @@ Note, this procedure is for the Seven News project (and Connexions.org).  Others
 Notes
 ---
 - menu templates are standard HTML files, so they can be edited/copied/... easily
-- CSS can be included in menu templates between the exported DIV's tags
-- Javscript in menu templates will not load--use an external .js file.  
+- the exported HTML control may possess STYLE tags
+- Javscript in templates will not load--use an external .js file.  
 - example Javascript document:  http://connexions.org/autoMenu/cxAutoMenu.js  
 - example menu template:  http://connexions.org/autoMenu/Templates/T_CxTopMenu.html
 - example HTML document:  http://connexions.org/autoMenu/A-Topics-Sample.html
@@ -62,3 +63,10 @@ Connexions: http://connexions.org
 GitHub: https://github.com/  
 Mozilla Developer Network: https://developer.mozilla.org/en-US/  
 
+
+Author
+---
+Chris DeFreitas  
+chrisd@europa.com  
+Fall 2016
+```
