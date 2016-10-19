@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AutoMenu.js template for 7 News Top Menu </title>
+<link href="/prj/cx/css/seven.css" rel="stylesheet" type="text/css" media="all">
+<script>
+function PageLoad() {
+	return;
+	window.addEventListener('message', function(event) {
+    console.log(event.data);
+	});
+}
+</script>
+</head>
+<body onload='PageLoad()'>
+
+<div id="nav_background">
+<style>
+#nav_background{
+		margin:0;
+/*	text-align:left;*/
+	text-align:center;
+}
+.example {
+	font-family:Arial, Helvetica, sans-serif;
+  position:relative;
+	background:#000000;
+	width:auto;
+	height:32px;
+	border:0;
+	margin:0 auto;
+	padding:0 0 0 8em;
+/*
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+*/
+}
+/* main menu styles */
+.nav,.nav ul {
+	background:#000000;
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+.nav {
+	margin:0 auto;
+  position:relative;
+  background-color: #000000;
+}
+.nav ul {
+	height:0;
+	left:0;
+	overflow:hidden;
+	position:absolute;
+	top:32px;
+	z-index:100
+}
+.nav li {
+	float:left;
+	position:relative;
+}
+.nav li a {
+	-moz-transition:0.1s;
+	-o-transition:0.1s;
+	-webkit-transition:0.1s;
+	background-color:#000000;
+	border:1px solid #000000; /* #800000; */
+	color:#FFF;
+	display:block;
+	font-size:0.8em;
+	font-weight:bold;
+	line-height:20px;
+	padding:5px 10px;
+	text-decoration:none;
+	transition:0.1s; /* 0.5s */
+}
+.nav li:hover > a {
+	background:#cc0000;
+	border-color:#800000;
+	color:#fff;
+}
+.nav li:hover ul.subs {
+	height:auto;
+	width:200px;
+}
+.nav ul li {
+	-moz-transition:0.1s;
+	-o-transition:0.1s;
+	-webkit-transition:0.1s;
+	opacity:0;
+	transition:0.1s;
+	width:100%;
+}
+.nav li ul li {
+	-moz-transition-delay:0s;
+	-o-transition-delay:0s;
+	-webkit-transition-delay:0s;
+	transition-delay:0s;
+}
+.nav li:hover ul li {
+	opacity:1;
+	-moz-transition-delay:0.1s;
+	-o-transition-delay:0.1s;
+	-webkit-transition-delay:0.1s;
+	transition-delay:0.1s;
+}
+.nav ul li a {
+	background:#cc0000;
+	border:0;
+	border-color:#800000;
+	color:#fff;
+	line-height:1px;
+	-moz-transition:1.25s;
+	-o-transition:1.25s;
+	-webkit-transition:1.25s;
+	transition:1.25s;
+}
+.nav li:hover ul li a {
+	line-height:20px;
+}
+.nav ul li a:hover {
+	background:#994d00;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 95%, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0)));
+	background-image: -moz-linear-gradient(-90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+	background-image: -o-linear-gradient(-90deg,rgba(255,255,255,0.5),rgba(255,255,25,0));
+}
+</style>
+  <div class="example">
+    <ul class="nav">
+      <li><a href=".">Home</a></li>
+      <li><a href="editions.html" title="Download scanned copies of 7 News in PDF format.">Editions</a></li>
+      <li><a href="articles.html" title="Learn more about 7 News.">Articles</a></li>
+      <li style='padding-right:7em;'><a href="contextTopics.html">Context/Topics</a></li>
+      <li><a href="/CxLibrary/Docs/AboutConnexions.htm">Connexions</a>
+        <ul class="subs">
+					<li><a href="http://connexions.org/home.htm">Home</a></li>
+					<li><a href="http://connexions.org/search/search.php">Search</a></li>
+					<li><a href="http://connexions.org/CxLibrary/CxSubjectIndex.htm">Browse Subject Index</a></li>
+					<li><a href="http://connexions.org/CxLibrary/CxTitleIndex.htm">Title Index</a></li>
+					<li><a href="http://connexions.org/Calendar/">Calendar</a></li>
+					<li><a href="http://connexions.org/CxLibrary/Docs/CxAlternativeMediaList.htm">Progressive media</a></li>
+					<li><a href="http://connexions.org/Connexipedia/CxPTitleIndex.htm">Connexipedia</a></li>
+        </ul>
+      </li>
+      <li><a href="http://www.sources.com/Sources.htm">Gateways</a>
+        <ul class="subs">
+          <li><a href="/CxL-ART.htm">Arts & Culture</a></li>
+          <li><a href="/CxL-ECO.htm">Economy</a></li>
+          <li><a href="/CxL-EDU.htm">Education</a></li>
+          <li><a href="/CxL-ENV.htm">Environment</a></li>
+          <li><a href="/CxL-HEA.htm">Health</a></li>
+          <li><a href="/CxL-HUM.htm">Human Rights</a></li>
+          <li><a href="/CxL-NAT.htm">Indigenous Peoples</a></li>
+          <li><a href="/CxL-DEV.htm">International</a></li>
+          <li><a href="/CxL-LAB.htm">Labour </a></li>
+          <li><a href="/CxL-ORG.htm">Organizing </a></li>
+          <li><a href="/CxL-MiddleEastResources.htm">Palestine/Israel</a></li>
+          <li><a href="/CxL-PEA.htm">Peace</a></li>
+          <li><a href="/CxL-PublicityMediainfo.htm">Publicity & Media Relations</a></li>
+          <li><a href="/CxL-RAC.htm">Race/Ethnicity/Identity</a></li>
+          <li><a href="/CxL-WOM.htm">Women</a></li>
+        </ul>
+      </li>
+      <li><a href="http://www.sources.com/Sources.htm">Sources</a>
+        <ul class="subs">
+          <li><a href="http://www.sources.com">Sources</a></li>
+          <li><a href="http://www.sources.com/PowerfulTools.htm">Getting Publicity</a></li>
+          <li><a href="http://www.sources.com/SourcesFAQ.htm">FAQ</a></li>
+          <li><a href="http://gateway.sources.com/Membership1.php">Sign up now</a></li>
+          <li><a href="http://www.sources.com/MNN/">Media directory</a></li>
+          <li><a href="http://www.sources.com/PNN/">Government directory</a></li>
+          <li><a href="http://gateway.sources.com/">Submit news release</a></li>
+          <li><a href="http://www.sources.com/Sources.htm">Journalists' page</a></li>
+          <li><a href="http://www.sources.com/Listings/Li_Su_Index.htm">SOURCES Subject Index</a></li>
+          <li><a href="http://gateway.sources.com/ssosearch/search.php">Search SOURCES</a></li>
+        </ul>
+      </li>
+      <li><a href="/CxLibrary/Docs/AboutConnexions.htm">About</a>
+        <ul class="subs">
+          <li><a href="about.html" >About 7 News</a></li>
+          <li><a href="/CxLibrary/Docs/AboutConnexions.htm">About Connexions</a></li>
+          <li><a href="/CxLibrary/Docs/ConnexionsWikipedia.htm">Wiki article</a></li>
+          <li><a href="/Donate.htm">Donate</a></li>
+          <li><a href="/Volunteer.htm">Volunteer</a></li>
+          <li><a href="/Archive/ArchiveCaseStatement-FND2085.htm">Archive space</a></li>
+          <li><a href="/Media/CxNewsletter.htm">Connexions Newsletter</a></li>
+        </ul>
+      </li>
+      <li><a href="/CxContactForm.php">Contact</a></li>
+    </ul>
+    <div style="clear:both"></div>
+  </div>
+</div>
+
+</body>

@@ -1,0 +1,700 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AutoMenu.js template for Connexions Sidebar</title>
+
+<!-- original stylesheet: "http://www.connexions.org/css/layout_updated-b2_1003.css" -->
+
+</head><body>
+
+<div id=divContent style='float:left; padding-bottom:10em; '>
+
+<div id='cssmenu'>
+
+<style>
+#cssmenu{}
+#cssmenu > ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+  vertical-align:baseline;
+	line-height: 1;
+}
+/* The container */
+#cssmenu > ul {
+  display: block;
+  position: relative;
+}
+/* The list elements which contain the links */
+#cssmenu > ul li {
+  display: block;
+	position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /*height: 25px;*/
+  height: auto;
+}
+/* General link styling */
+#cssmenu > ul li a {
+  /* Layout */
+
+  display: block;
+  position: relative;
+  margin: 0;
+  border-bottom: 1px solid #7a7878;
+  padding: 7px 20px;
+  /* Typography */
+
+  font-family: Helvetica, Arial, sans-serif;
+  color: #171616;
+  text-decoration: none;
+  text-transform: none;
+  text-shadow: 0 1px 0 #fff;
+  font-size: 12px;
+  font-weight: 300;
+  /* Background & effects */
+
+  background: #ffffff;
+}
+#cssmenu > ul li:first-child > a {
+	border-top:0;
+}
+/* last link of the menu/submenus */
+#cssmenu > ul li:last-child > a {
+	border-bottom:1px solid #7a7878;
+}
+/* The hover state of the menu/submenu links */
+#cssmenu > ul li a:hover,
+#cssmenu > ul li:hover > a {
+  color: #ffffff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  background: #7a7878;
+  background: -webkit-linear-gradient(#7a7878, #605f5f);
+  background: -moz-linear-gradient(#7a7878, #605f5f);
+  background: linear-gradient(#7a7878, #605f5f);
+  border-color: transparent;
+}
+/* The arrow indicating a submenu */
+#cssmenu > ul .has-sub > a::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 0px;
+  height: 0px;
+  /* Creating the arrow using borders */
+  border: 4px solid transparent;
+  border-left: 4px solid #171616;
+}
+/* not used:
+The same arrow, but with a darker color, to create the shadow effect
+#cssmenu > ul .has-sub > a::before {
+  content: '';
+  position: absolute;
+  top: 11px;
+  right: 10px;
+  width: 0px;
+  height: 0px;
+  * Creating the arrow using borders *
+  border: 4px solid transparent;
+  border-left: 4px solid #fff;
+}
+*/
+/* Changing the color of the arrow on hover */
+#cssmenu > ul li > a:hover::after,
+#cssmenu > ul li:hover > a::after{ border-left: 4px solid #fff; }
+#cssmenu > ul li > a:hover::before,
+#cssmenu > ul li:hover > a::before{ border-left: 4px solid rgba(0, 0, 0, 0.25); }
+
+/* THE SUBMENUS */
+#cssmenu > ul ul {
+	border: 1px solid #7a7878;
+	border-left:0;
+	border-bottom:0;
+
+  position: absolute;
+  left: 100%;
+  top: -9999px;
+  padding-left: 5px;
+  opacity: 0;
+  width: 200px;
+  /* The fade effect, created using an opacity transition */
+  -webkit-transition: opacity 0.3s ease-in;
+  -moz-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+}
+#cssmenu > ul ul li a{
+/*	font-size: 12px; */
+	border-top:0;
+	border-right:0;
+	border-left:1px solid #7a7878;
+}
+
+/* Showing the submenu when the user is hovering the parent link */
+#cssmenu > ul li:hover > ul {
+  top: 0px;
+  opacity: 1;
+  z-index: 1;
+}
+
+/* section dividers */
+#cssmenu .menuBorder{ border-top:5px #990000 solid; }
+/* section divider hr - alter to menuBorder class */
+#cssmenu hr {
+	width: 100%;
+	height: 0.8em;
+	background-color: #990000;
+	border: 1px #990000;
+}
+</style>
+<ul>
+	<li><a href="/CxLibrary/Docs/AboutConnexions.htm">About</a></li>
+	<li class='has-sub'><a href="/Donate.htm">Contribute/Participate</a>
+		<ul>
+			<li><a href='/Donate.htm'><span>Donate</span></a></li>
+			<li><a href="/CxLibrary/Docs2/Bequests.htm"><span>Bequests</span></a></li>
+			<li><a href="/Volunteer.htm"><span>Volunteer</span></a></li>
+			<li><a href="/CxLibrary/Docs2/Contributors.htm"><span>Contribute content</span></a></li>
+			<li><a href="/SignInCx.htm"><span>Add Calendar events</span></a></li>
+			<li><a href="/Media/CxNewsletter.htm"><span>Connexions Newsletter</span></a></li>
+			<li><a href="/CxBanners3.htm"><span>Help promote Connexions</span></a></li>
+			<li><a href="/Archive/ArchiveCaseStatement-FND2085.htm"><span>Connexions needs a home</span></a></li>
+		</ul>
+	</li>
+
+<!--div class="border"></div-->
+	<li class='menuBorder'>
+		<a href="/search/search.php">Search</a>
+	</li>
+	<li>
+										<a href="/CxLibrary/CxSubjectIndex.htm">Subject Index</a>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxLibrary/CxTitleIndex.htm">Library</a>
+		<ul>
+			<li><a href='/CxLibrary/CxTitleIndex.htm'><span>Title Index A-Z</span></a></li>
+			<li><a href='/CxLibrary/CxAuthorIndex.htm'><span>Author Index A-Z</span></a></li>
+			<li><a href='/CxLibrary/CxSubjectIndex.htm'><span>Subject Index</span></a></li>
+			<li><a href='/CxLibrary/CxYearIndex.htm'><span>Chronological Index</span></a></li>
+			<li><a href='/CxLibrary/CxTypeIndex.htm'><span>Format Index</span></a></li>
+			<li><a href='/CxLibrary/CxDeweyIndex.htm'><span>Dewey Index </span></a></li>
+			<li><a href='/CxLibrary/CxLoCIndex.htm'><span>Library of Congress Index</span></a></li>
+			<li><a href='/CxLibrary/CxSpotlightIndex.htm'><span>Spotlight</span></a></li>
+			<li><a href='/Connexipedia/CxPTitleIndex.htm'><span>Connexipedia &ndash; Title Index</span></a></li>
+			<li><a href='/CxLibrary/Persons-Listed-in-Connexipedia-24454CX.htm'><span>Persons - Connexipedia</span></a></li>
+			<li><a href='/CxLibrary/Events-Listed-in-Connexipedia-24455CX.htm'><span>Events - Connexipedia</span></a></li>
+			<li><a href='/CxLibrary/Organizations-Listed-in-Connex-24456CX.htm'><span>Movements - Connexipedia</span></a></li>
+			<li><a href='/CxLibrary/Docs/SeedsofFire.htm'><span>Seeds of Fire</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/Groups/CxG_AZ_Index.htm">Groups & Websites</a>
+		<ul>
+			<li><a href='/Groups/CxG_AZ_Index.htm'><span>Names A-Z</span></a></li>
+			<li><a href='/CxLibrary/CxSubjectIndex.htm'><span>Subject Index</span></a></li>
+			<li><a href='http://www.sources.com/Sources.htm'><span>Sources Directory</span></a></li>
+			<li><a href='/CxLibrary/Docs/CxAlternativeMediaList.htm'><span>Alternative media</span></a></li>
+			<li><a href='/CxLibrary/Selected-Archives-Libraries-25055CX.htm'><span>Archives & Websites</span></a></li>
+			<li><a href='/CxLibrary/Selected-Blogs-Personal-Webs-25056CX.htm'><span>Blogs & Personal websites</span></a></li>
+			<li><a href='/CxLibrary/Ecosocialist-Groups-Websites-24735CX.htm'><span>Ecosocialist</span></a></li>
+			<li><a href='/CxLibrary/Radical-Socialist-Groups-Web-24737CX.htm'><span>Left socialist</span></a></li>
+			<li><a href='/CxLibrary/Libertarian-Socialist-Groups-24733CX.htm'><span>Libertarian socialist</span></a></li>
+			<li><a href='/CxLibrary/Marxist-Groups-Websites-24736CX.htm'><span>Marxist</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/Calendar/">Calendar</a>
+		<ul>
+			<li><a href='/Calendar/'><span>Connexions Calendar</span></a></li>
+			<li><a href='/SignInCx.htm'><span>Submit an event</span></a></li>
+			<li><a href="/Calendar/cxCalendarRSS.rss"><span>RSS Calendar</span></a></li>
+			<li><a href='http://calendar.sources.com/'><span>Sources Calendar</span></a></li>
+			<li><a href='http://www.sources.com/News.htm'><span>Sources News Releases</span></a></li>
+			<li><a href='/Links/Link120a.htm'><span>Other Calendars</span></a></li>
+			<li><a href='/CxLibrary/Docs/SeedsofFire.htm'><span>Seeds of Fire chronology</span></a></li>
+			<li><a href='/CxCalExpired_2015.htm'><span>Expired events</span></a></li>
+		</ul>
+	</li>
+	<!--div class="border"></div-->
+	<li class='has-sub menuBorder'>
+		<a href="/CxL-ORG.htm">Organizing for Change</a>
+		<ul>
+			<li><a href='/CxL-ORG.htm'><span>Organizing for Change</span></a></li>
+			<li><a href='/CxLibrary/Community-Organizing-3028CX.htm'><span>Community Organizing</span></a></li>
+			<li><a href="/CxLibrary/Docs/Diemer-GrassrootsMediaRelations.htm">Grassroots Media Relations</a></li>
+			<li><a href='/CxLibrary/Grassroots-Campaigns-20322CX.htm'><span>Grassroots Organizing</span></a></li>
+			<li><a href='/CxLibrary/Labour-Organizing-8533CX.htm'><span>Labour Organizing</span></a></li>
+			<li><a href='/CxLibrary/Group-Meetings-6890CX.htm'><span>Meetings</span></a></li>
+			<li><a href='/CxLibrary/Organizing-10886CX.htm'><span>Organizing Resources</span></a></li>
+			<li><a href='/CxLibrary/Manuals-Handbooks-Activists-22867CX.htm'><span>Manuals & Handbooks</span></a></li>
+			<li><a href='/Marxism/index.htm'><span>Marxism</span></a></li>
+			<li><a href='/CxLibrary/Consensus-Decision-Making-3337CX.htm'><span>Process/Consensus</span></a></li>
+			<li><a href='/CxLibrary/Protest-22145CX.htm'><span>Protest</span></a></li>
+			<li><a href='/CxLibrary/Resistance-20688CX.htm'><span>Resistance</span></a></li>
+			<li><a href='/CxLibrary/Revolutionary-Politics-12910CX.htm'><span>Revolutionary Politics</span></a></li>
+			<li><a href='/CxLibrary/Solidarity-13793CX.htm'><span>Solidarity</span></a></li>
+			<li><a href='/CxLibrary/Strikes-14081CX.htm'><span>Strikes</span></a></li>
+			<li><a href='/CxLibrary/Tactics-14286CX.htm'><span>Tactics</span></a></li>
+			<li><a href='/CxLibrary/Union-Organizing-15173CX.htm'><span>Union Organizing</span></a></li>
+			<li><a href='/CxLibrary/Workplace-Organizing-22476CX.htm'><span>Workplace Organizing</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxL-PublicityMediaInfo.htm">Publicity & Media</a>
+		<ul>
+			<li><a href='/CxL-PublicityMediaInfo.htm'><span>Publicity & Media Relations</span></a></li>
+			<li><a href="/CxLibrary/Docs/Diemer-GrassrootsMediaRelations.htm">Grassroots Media Relations</a></li>
+			<li><a href='/CxLibrary/Docs/CxAlternativeMediaList.htm'><span>Alternative media</span></a></li>
+			<li><a href='www.sources.com/MNN/'><span>Media Names & Numbers</span></a></li>
+			<li><a href='/CxLibrary/Framing-Issues-24013CX.htm'><span>Framing issues</span></a></li>
+			<li><a href='/CxLibrary/Media-Relations-9474CX.htm'><span>Media relations</span></a></li>
+			<li><a href='/CxLibrary/Propaganda-11985CX.htm'><span>Propaganda</span></a></li>
+			<li><a href='/CxLibrary/Public-Relations-12152CX.htm'><span>Public relations</span></a></li>
+			<li><a href='http://www.sources.com/GrassrootsPublicityTools.htm'><span>SOURCES Tools</span></a></li>
+			<li><a href='http://gateway.sources.com/Membership1.php'><span>SOURCES Memberships</span></a></li>
+			<li><a href='http://gateway.sources.com/'><span>News releases submission</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/CX-Manifestos.htm">Visions & Strategies</a>
+		<ul>
+			<li><a href='/CX-Manifestos.htm'><span>Manifestos & Visions</span></a></li>
+			<li><a href='/CxLibrary/Strategies-for-Social-Change-24135CX.htm'><span>Strategies for Change</span></a></li>
+			<li><a href='/CxLibrary/Radical-Political-Theory-22847CX.htm'><span>Radical Political Theory</span></a></li>
+			<li><a href='/CxLibrary/Programs-Strategy-Manifesto-18952CX.htm'><span>Political Programs</span></a></li>
+			<li><a href='/CxLibrary/Socialism-13741CX.htm'><span>Socialism</span></a></li>
+			<li><a href='/CxLibrary/Marxism-Overviews-24028CX.htm'><span>Marxism</span></a></li>
+			<li><a href='/CxLibrary/Libertarian-Socialism-8790CX.htm'><span>Libertarian Socialism</span></a></li>
+			<li><a href='/CxLibrary/Ecosocialism-22617CX.htm'><span>Ecosocialism</span></a></li>
+			<li><a href='/CxLibrary/Democratization-4043CX.htm'><span>Democratization</span></a></li>
+			<li><a href='/CxLibrary/Class-Analysis-20460CX.htm'><span>Class Analysis</span></a></li>
+			<li><a href='/CxLibrary/Anarchism-722CX.htm'><span>Anarchism</span></a></li>
+			<li><a href='/CxLibrary/Anarchism-Critiques-24393CX.htm'><span>Anarchism Critiques</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxL-HIS.htm">History</a>
+		<ul>
+			<li><a href='/CxLibrary/Docs/SeedsofFire.htm'><span>Seeds of Fire</span></a></li>
+			<li><a href='/CxLibrary/Aboriginal-History-30CX.htm'><span>Aboriginal History</span></a></li>
+			<li><a href='/CxLibrary/Black-History-Identity-1547CX.htm'><span>Black History</span></a></li>
+			<li><a href='/CxLibrary/History-Canadian-7254CX.htm'><span>Canadian History</span></a></li>
+			<li><a href='/CxLibrary/Capitalism-History-of-24040CX.htm'><span>Capitalism/History</span></a></li>
+			<li><a href='/CxLibrary/Labour-History-8522CX.htm'><span>Labour History</span></a></li>
+			<li><a href='/CxLibrary/Left-History-24110CX.htm'><span>Left History</span></a></li>
+			<li><a href='http://www.counterfire.org/index.php/articles/a-marxist-history-of-the-world'><span>A Marxist History of World</span></a></li>
+			<li><a href='/CxL-HSM.htm'><span>Oral History & Memoirs</span></a></li>
+			<li><a href='/CxL-HSL.htm'><span>Radical History</span></a></li>
+			<li><a href='/CxLibrary/Revolution-12908CX.htm'><span>Revolution</span></a></li>
+			<li><a href='/CxLibrary/Revolutionary-Moments-24546CX.htm'><span>Revolutionary Moments</span></a></li>
+			<li><a href='/CxLibrary/Womens-History-15852CX.htm'><span>Women's History</span></a></li>
+			<li><a href='/CxLibrary/Workers-History-21154CX.htm'><span>Workers' History</span></a></li>
+			<li><a href='http://www.sources.com/Listings/History-7248.htm'><span>SOURCES: History</span></a></li>
+			<li><a href='/CxLibrary/Docs/CaseforGrassrootsArchives.htm'><span>Why Grassroots Archives</span></a></li>
+			<li><a href='/CxLibrary/Docs2/SelectedArchives.htm'><span>Archive Projects</span></a></li>
+		</ul>
+	</li>
+	<li class='menuBorder'>
+		<a href="/CxLibrary/Docs/AboutConnexions.htm#gateways"><span style="font-weight: bold; font-size: 14px;">GATEWAYS</span></a>
+	</li>
+	<li>
+										<a href="/CxLibrary/CxSpotlightIndex.htm">Spotlight</a>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxL-HUM.htm">Civil Liberties/Human Rights</a>
+		<ul>
+			<li><a href='/CxLibrary/Aboriginal-Rights-56CX.htm'><span>Aboriginal Rights</span></a></li>
+			<li><a href='/CxLibrary/Age-Discrimination-21652CX.htm'><span>Age Discrimination</span></a></li>
+			<li><a href='/CxLibrary/Censorship-2348CX.htm'><span>Censorship</span></a></li>
+			<li><a href='/CxLibrary/Civil-Liberties-2712CX.htm'><span>Civil Liberties</span></a></li>
+			<li><a href='/CxLibrary/Democratization-4043CX.htm'><span>Democratization</span></a></li>
+			<li><a href='/CxLibrary/Freedom-of-Expression-6375CX.htm'><span>Freedom of Expression</span></a></li>
+			<li><a href='/CxLibrary/Human-Rights-7513CX.htm'><span>Human Rights</span></a></li>
+			<li><a href='/CxLibrary/National-Security-10207CX.htm'><span>National Security</span></a></li>
+			<li><a href='/CxLibrary/Police-State-24069CX.htm'><span>Police State</span></a></li>
+			<li><a href='/CxLibrary/Political-Prisoners-11608CX.htm'><span>Political Prisoners</span></a></li>
+			<li><a href='/CxLibrary/CX12255.htm'><span>Political Repression</span></a></li>
+			<li><a href='/CxLibrary/Press-Freedom-11783CX.htm'><span>Press Freedom</span></a></li>
+			<li><a href='/CxLibrary/Privacy-11848CX.htm'><span>Privacy</span></a></li>
+			<li><a href='/CxLibrary/Secularism-20117CX.htm'><span>Secularism</span></a></li>
+			<li><a href='/CxLibrary/State-Violence-23947CX.htm'><span>State Violence</span></a></li>
+			<li><a href='/CxLibrary/Surveillance-14220CX.htm'><span>Surveillance</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxL-URB.htm">Community/Urban</a>
+		<ul><li><a href='/CxLibrary/Bicycling-1448CX.htm'><span>Bicyling</span></a></li>
+			<li><a href='/CxLibrary/Cities-17001CX.htm'><span>Cities</span></a></li>
+			<li><a href='/CxLibrary/Community-Organizing-3028CX.htm'><span>Community Organizing</span></a></li>
+			<li><a href='/CxLibrary/Disability-Issues-4304CX.htm'><span>Disability Issues</span></a></li>
+			<li><a href='/CxLibrary/Housing-7456CX.htm'><span>Housing</span></a></li>
+			<li><a href='/CxLibrary/Seniors-13357CX.htm'><span>Seniors</span></a></li>
+			<li><a href='/CxLibrary/Urban-Environment-15244CX.htm'><span>Urban Environment</span></a></li>
+			<li><a href='/CxLibrary/Urban-History-15251CX.htm'><span>Urban History</span></a></li>
+			<li><a href='/CxLibrary/Urban-Transportation-15265CX.htm'><span>Urban Transportation</span></a></li>
+			<li><a href='/CxLibrary/Walking-15541CX.htm'><span>Walking</span></a></li>
+			<li><a href='/CxLibrary/Work-Family-15914CX.htm'><span>Work & Family</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxL-ART.htm">Culture, Arts, Media</a>
+		<ul><li><a href='/CxLibrary/Advertising-285CX.htm'><span>Advertising</span></a></li>
+			<li><a href='/CxLibrary/Arts-The-1055CX.htm'><span>Arts</span></a></li>
+			<li><a href='/CxLibrary/Corporate-Media-20260CX.htm'><span>Corporate Media</span></a></li>
+			<li><a href='/CxLibrary/Cultural-Studies-20820CX.htm'><span>Cultural Studies</span></a></li>
+			<li><a href='/CxLibrary/Culture-3828CX.htm'><span>Culture</span></a></li>
+			<li><a href='/CxLibrary/Ideology-17262CX.htm'><span>Ideology</span></a></li>
+			<li><a href='/CxLibrary/Journalism-8419CX.htm'><span>Journalism</span></a></li>
+			<li><a href='/CxLibrary/Media-9429CX.htm'><span>Media</span></a></li>
+			<li><a href='/CxLibrary/Media-Analysis-Criticism-9431CX.htm'><span>Media Analysis & Criticism</span></a></li>
+			<li><a href='/CxLibrary/Media-Ownership-16762CX.htm'><span>Media Ownership</span></a></li>
+			<li><a href='/CxLibrary/Press-Freedom-11783CX.htm'><span>Press Freedom</span></a></li>
+			<li><a href='/CxLibrary/Propaganda-11985CX.htm'><span>Propaganda</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxL-ECO.htm">Economy</a>
+		<ul><li><a href='/CxLibrary/Banking-1333CX.htm'><span>Banking</span></a></li>
+			<li><a href='/CxLibrary/Capitalism-2211CX.htm'><span>Capitalism</span></a></li>
+			<li><a href='/CxLibrary/Capitalism-History-of-24040CX.htm'><span>Capitalism/History</span></a></li>
+			<li><a href='/CxLibrary/Class-Analysis-20460CX.htm'><span>Class Analysis</span></a></li>
+			<li><a href='/CxLibrary/Critique-of-Political-Economy-23740CX.htm'><span>Critique of Political Economy</span></a></li>
+			<li><a href='/CxLibrary/Economic-Alternatives-4650CX.htm'><span>Economic Alternatives</span></a></li>
+			<li><a href='/CxLibrary/Economic-Crises-17113CX.htm'><span>Economic Crises</span></a></li>
+			<li><a href='/CxLibrary/Economic-History-4665CX.htm'><span>Economic History</span></a></li>
+			<li><a href='/CxLibrary/Globalization-of-Economy-6702CX.htm'><span>Globalization</span></a></li>
+			<li><a href='/CxLibrary/Inequality-7836CX.htm'><span>Inequality</span></a></li>
+			<li><a href='/CxLibrary/Labour-Unions-8542CX.htm'><span>Labour Unions</span></a></li>
+			<li><a href='/CxLibrary/Marxian-Economics-24662CX.htm'><span>Marxian Economics</span></a></li>
+			<li><a href='/CxLibrary/Neo-Liberalism-22858CX.htm'><span>Neo-Liberalism</span></a></li>
+			<li><a href='/CxLibrary/Working-Class-15952CX.htm'><span>Working Class</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxL-EDU.htm">Education/Children</a>
+		<ul><li><a href='/CxLibrary/Alternative-Education-649CX.htm'><span>Alternative Education</span></a></li>
+			<li><a href='/CxLibrary/Children-2519CX.htm'><span>Children</span></a></li>
+			<li><a href='/CxLibrary/Education-4730CX.htm'><span>Education</span></a></li>
+			<li><a href='/CxLibrary/Learning-8695CX.htm'><span>Learning</span></a></li>
+			<li><a href='/CxLibrary//Literacy-8884CX.htm'><span>Literacy</span></a></li>
+			<li><a href='/CxLibrary/Popular-Education-11651CX.htm'><span>Popular Education</span></a></li>
+			<li><a href='/CxLibrary/Students-14134CX.htm'><span>Students</span></a></li>
+			<li><a href='/CxLibrary/Universities-15208CX.htm'><span>Universities</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxL-ENV.htm">Environment/Ecology/Climate</a>
+		<ul><li><a href='/CxLibrary/Climate-Change-2755CX.htm'><span>Climate Change</span></a></li>
+			<li><a href='/CxLibrary/Ecology-4645CX.htm'><span>Ecology</span></a></li>
+			<li><a href='/CxLibrary/Ecosocialism-22617CX.htm'><span>Ecosocialism</span></a></li>
+			<li><a href='/CxLibrary/Environment-Economy-5250CX.htm'><span>Environment/Economy</span></a></li>
+			<li><a href='/CxLibrary/Environmental-Crisis-5293CX.htm'><span>Environmental Crisis</span></a></li>
+			<li><a href='/CxLibrary/Mining-Environment-9834CX.htm'><span>Mining/Environment</span></a></li>
+			<li><a href='/CxLibrary/Nature-10279CX.htm'><span>Nature</span></a></li>
+			<li><a href='/CxLibrary/Noise-Pollution-10469CX.htm'><span>Noise Pollution</span></a></li>
+			<li><a href='/CxLibrary/Pollution-11627CX.htm'><span>Pollution</span></a></li>
+			<li><a href='/CxLibrary/Toxic-Wastes-14770CX.htm'><span>Toxic Wastes</span></a></li>
+			<li><a href='/CxLibrary/Urban-Environment-15244CX.htm'><span>Urban Environment</span></a></li>
+			<li><a href='/CxLibrary/Water-15583CX.htm'><span>Water</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxL-AGR.htm">Farming/Agriculture</a>
+		<ul>
+			<li><a href='/CxLibrary/Agriculture-453CX.htm'><span>Agriculture</span></a></li>
+			<li><a href='/CxLibrary/Agriculture-Ecology-457CX.htm'><span>Agriculture/Ecology</span></a></li>
+			<li><a href='/CxLibrary/Agricultural-Industries-432CX.htm'><span>Agricultural Industries</span></a></li>
+			<li><a href='/CxLibrary/Environment-Agriculture-16727CX.htm'><span>Environment & Agriculture</span></a></li>
+			<li><a href='/CxLibrary/Factory-Farming-5624CX.htm'><span>Factory Farming</span></a></li>
+			<li><a href='/CxLibrary/Fertility-of-the-Soil-23749CX.htm'><span>Fertility of the Soil</span></a></li>
+			<li><a href='/CxLibrary/Food-6115CX.htm'><span>Food</span></a></li>
+			<li><a href='/CxLibrary/Organic-Farming-10866CX.htm'><span>Organic Farming</span></a></li>
+			<li><a href='/CxLibrary/Sustainable-Agriculture-14229CX.htm'><span>Sustainable Agriculture</span></a></li>
+			<li><a href='/CxLibrary/Urban-Agriculture-19572CX.htm'><span>Urban Agriculture</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxL-FOO.htm">Food</a>
+		<ul>
+			<li><a href='/CxLibrary/Biotechnology-Food-17877CX.htm'><span>Biotechnology/Food</span></a></li>
+			<li><a href='/CxLibrary/Food-6115CX.htm'><span>Food Issues</span></a></li>
+			<li><a href='/CxLibrary/Food-Safety-6166CX.htm'><span>Food Safety</span></a></li>
+			<li><a href='/CxLibrary/Food-Security-19322CX.htm'><span>Food Security</span></a></li>
+			<li><a href='/CxLibrary/Hunger-7542CX.htm'><span>Hunger</span></a></li>
+			<li><a href='/CxLibrary/Local-Food-23716CX.htm'><span>Local Food</span></a></li>
+			<li><a href='/CxLibrary/Organic-Agriculture-Food-10863CX.htm'><span>Organic Agriculture/Food</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxL-HEA.htm">Health</a>
+		<ul>
+			<li><a href='/CxLibrary/Environment-Health-5241CX.htm'><span>Environment & Health</span></a></li>
+			<li><a href='/CxLibrary/Health-Care-Privatization-18603CX.htm'><span>Health Care Privatization</span></a></li>
+			<li><a href='/CxLibrary/Health-Class-24720CX.htm'><span>Health & Class</span></a></li>
+			<li><a href='/CxLibrary/Health-Determinants-7062CX.htm'><span>Health Determinants</span></a></li>
+			<li><a href='/CxLibrary/Medicare-9580CX.htm'><span>Medicare</span></a></li>
+			<li><a href='/CxLibrary/Noise-Health-Risks-25038CX.htm'><span>Noise/Health Risks</span></a></li>
+			<li><a href='/CxLibrary/Occupational-Health-Safety-10636CX.htm'><span>Occupational Health & Safety</span></a></li>
+			<li><a href='/CxLibrary/Pharmaceuticals-Industry-11343CX.htm'><span>Pharmaceuticals Industry</span></a></li>
+			<li><a href='/CxLibrary/Public-Health-Experts-12122CX.htm'><span>Public Health</span></a></li>
+		</ul>
+	</li>
+	<li class="has-sub"><a href="/CxL-IMP.htm">Imperialism/Colonialism</a>
+		<ul>
+			<li><a href='/CxLibrary/Anti-Imperialism-22850CX.htm'><span>Anti-Imperialism</span></a></li>
+			<li><a href='/CxLibrary/Capital-Accumulation-20639CX.htm'><span>Capital Accumulation</span></a></li>
+			<li><a href='/CxLibrary/Colonialism-17018CX.htm'><span>Colonialism</span></a></li>
+			<li><a href='/CxLibrary/Economics-International-4688CX.htm'><span>Economics/International</span></a></li>
+			<li><a href='/CxLibrary/Globalization-18043CX.htm'><span>Globalization</span></a></li>
+			<li><a href='/CxLibrary/Imperialism-7669CX.htm'><span>Imperialism</span></a></li>
+			<li><a href='/CxLibrary/International-Monetary-Fund-I-17293CX.htm'><span>International Monetary Fund</span></a></li>
+			<li><a href='/CxLibrary/Militarism-9759CX.htm'><span>Militarism</span></a></li>
+			<li><a href='/CxLibrary/Transnational-Corporations-14938CX.htm'><span>Transnational Corporations</span></a></li>
+			<li><a href='/CxLibrary/US-Imperialism-18318CX.htm'><span>U.S. Imperialism</span></a></li>
+			<li><a href='/CxLibrary/World-Trade-Organization-WTO-16683CX.htm'><span>World Trade Organization</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxL-LAB.htm">Labour</a>
+		<ul>
+			<li><a href='/CxLibrary/Agricultural-Labour-434CX.htm'><span>Agricultural Labour</span></a></li>
+			<li><a href='/CxLibrary/Labour-History-8522CX.htm'><span>Labour History</span></a></li>
+			<li><a href='/CxLibrary/Labour-Issues-8524CX.htm'><span>Labour Issues</span></a></li>
+			<li><a href='/CxLibrary/Labour-Movement-19822CX.htm'><span>Labour Movement</span></a></li>
+			<li><a href='/CxLibrary/Labour-Unions-8542CX.htm'><span>Labour Unions</span></a></li>
+			<li><a href='/CxLibrary/Migrants-9755CX.htm'><span>Migrant Workers</span></a></li>
+			<li><a href='/CxLibrary/Part-time-Work-Workers-11096CX.htm'><span>Part-time Work/Workers</span></a></li>
+			<li><a href='/CxLibrary/Persons-Labour-Movement-23920CX.htm'><span>Persons: Labour Movement</span></a></li>
+			<li><a href='/CxLibrary/Precarious-Work-24900CX.htm'><span>Precarious Work</span></a></li>
+			<li><a href='/CxLibrary/Seasonal-Labour-13257CX.htm'><span>Seasonal Labour</span></a></li>
+			<li><a href='/CxLibrary/Strikes-14081CX.htm'><span>Strikes</span></a></li>
+			<li><a href='/CxLibrary/Union-Organizing-15173CX.htm'><span>Union Organizing</span></a></li>
+			<li><a href='/CxLibrary/Workers-History-21154CX.htm'><span>Workers' History</span></a></li>
+			<li><a href='/CxLibrary/Working-Class-15952CX.htm'><span>Working Class</span></a></li>
+			<li><a href='/CxLibrary/Working-Poor-18867CX.htm'><span>Working Poor</span></a></li>
+			<li><a href='/CxLibrary/Workplace-Organizing-22476CX.htm'><span>Workplace Organizing</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxL-LES.htm">LGBT</a>
+		<ul>
+			<li><a href='/CxLibrary/Bisexuality-1542CX.htm'><span>Bisexuality</span></a></li>
+			<li><a href='/CxLibrary/Gay-Lesbian-History-24114CX.htm'><span>Gay & Lesbian History</span></a></li>
+			<li><a href='/CxLibrary/Gay-Lesbian-Issues-18588CX.htm'><span>Gay & Lesbian Issues</span></a></li>
+			<li><a href='/CxLibrary/Gender-Issues-6569CX.htm'><span>Gender Issues</span></a></li>
+			<li><a href='/CxLibrary/Lesbians-8771CX.htm'><span>Lesbians</span></a></li>
+			<li><a href='/CxLibrary/Transgendered-People-21069CX.htm'><span>Trans People</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxL-NAT.htm">Native Peoples/First Nations</a>
+		<ul>
+			<li><a href='/CxLibrary/Aboriginal-History-30CX.htm'><span>Aboriginal History</span></a></li>
+			<li><a href='/CxLibrary/Aboriginal-Issues-33CX.htm'><span>Aboriginal Issues</span></a></li>
+			<li><a href='/CxLibrary/Aboriginal-Land-Claims-35CX.htm'><span>Aboriginal Land</span></a></li>
+			<li><a href='/CxLibrary/Aboriginal-Rights-56CX.htm'><span>Aboriginal Rights</span></a></li>
+			<li><a href='/CxLibrary/First-Nations-5985CX.htm'><span>First Nations</span></a></li>
+			<li><a href='/CxLibrary/Indigenous-Peoples-Mining-21200CX.htm'><span>Indigenous Peoples/Mining</span></a></li>
+			<li><a href='/CxLibrary/Inuit-8257CX.htm'><span>Inuit</span></a></li>
+			<li><a href='/CxLibrary/Metis-9707CX.htm'><span>Metis</span></a></li>
+			<li><a href='/CxLibrary/Persons-Aboriginal-23913CX.htm'><span>Persons: Aboriginal</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxL-MiddleEastResources.htm">Palestine/Israel</a>
+		<ul>
+			<li><a href='/CxLibrary/Israel-8340CX.htm'><span>Israel</span></a></li>
+			<li><a href='/CxLibrary/Palestine-16515CX.htm'><span>Palestine</span></a></li>
+			<li><a href='/CxLibrary/Gaza-Strip-6558CX.htm'><span>Gaza</span></a></li>
+			<li><a href='/CxLibrary/Israeli-Apartheid-Hafrada-21842CX.htm'><span>Israeli Apartheid (Hafrada)</span></a></li>
+			<li><a href='/CxLibrary/Israeli-Settlements-20914CX.htm'><span>Israeli Settlements</span></a></li>
+			<li><a href='/CxLibrary/Occupied-Territories-10652CX.htm'><span>Occupied Territories</span></a></li>
+			<li><a href='/CxLibrary/Palestinian-Refugees-20916CX.htm'><span>Palestinian Refugees</span></a></li>
+			<li><a href='/CxLibrary/Refugees-Right-of-Return-21945CX.htm'><span>Refugees/Right of Return</span></a></li>
+			<li><a href='/CxLibrary/Zionism-16146CX.htm'><span>Zionism</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxL-PEA.htm">Peace & Militarism</a>
+		<ul>
+			<li><a href='/CxLibrary/Imperialism-7669CX.htm'><span>Imperialism</span></a></li>
+			<li><a href='/CxLibrary/Militarism-9759CX.htm'><span>Militarism</span></a></li>
+			<li><a href='/CxLibrary/Militarism-Democracy-9760CX.htm'><span>Militarism & Democracy</span></a></li>
+			<li><a href='/CxLibrary/Military-Industrial-Complex-24011CX.htm'><span>Military-Industrial Complex</span></a></li>
+			<li><a href='/CxLibrary/Military-Violence-Against-Civi-23932CX.htm'><span>Military Violence vs. Civilians</span></a></li>
+			<li><a href='/CxLibrary/Non-violence-10505CX.htm'><span>Non-violence</span></a></li>
+			<li><a href='/CxLibrary/Peace-11172CX.htm'><span>Peace</span></a></li>
+			<li><a href='/CxLibrary/Peace-Movement-22332CX.htm'><span>Peace Movement</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxL-RAC.htm">Racism/Ethnicity/Identity</a>
+		<ul>
+			<li><a href='/CxLibrary/Anti-Racism-820CX.htm'><span>Anti-Racism</span></a></li>
+			<li><a href='/CxLibrary/Anti-Semitism-823CX.htm'><span>Anti-Semitism</span></a></li>
+			<li><a href='/CxLibrary/Caste-16965CX.htm'><span>Caste</span></a></li>
+			<li><a href='/CxLibrary/Class-Analysis-20460CX.htm'><span>Class Analysis</span></a></li>
+			<li><a href='/CxLibrary/Discrimination-4347CX.htm'><span>Discrimination</span></a></li>
+			<li><a href='/CxLibrary/Diversity-4388CX.htm'><span>Diversity</span></a></li>
+			<li><a href='/CxLibrary/Ethnic-Cleansing-21944CX.htm'><span>Ethnic Cleansing</span></a></li>
+			<li><a href='/CxLibrary/Ethnic-Histories-5440CX.htm'><span>Ethnic Histories</span></a></li>
+			<li><a href='/CxLibrary/Ethnic-Nationalism-22635CX.htm'><span>Ethnic Nationalism</span></a></li>
+			<li><a href='/CxLibrary/Identity-Politics-22755CX.htm'><span>Identity Politics</span></a></li>
+			<li><a href='/CxLibrary/Minority-Rights-9848CX.htm'><span>Minority Rights</span></a></li>
+			<li><a href='/CxLibrary/Multiculturalism-10017CX.htm'><span>Multiculturalism</span></a></li>
+			<li><a href='/CxLibrary/Nationalism-10215CX.htm'><span>Nationalism</span></a></li>
+			<li><a href='/CxLibrary/Racism-12339CX.htm'><span>Racism</span></a></li>
+			<li><a href='/CxLibrary/Self-Determination-13324CX.htm'><span>Self-Determination</span></a></li>
+			<li><a href='/CxLibrary/Sexism-13441CX.htm'><span>Sexism</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxL-RGT.htm">The Right</a>
+		<ul>
+			<li><a href='/CxLibrary/Christian-Right-22143CX.htm'><span>Christian Right</span></a></li>
+			<li><a href='/CxLibrary/Fascism-17170CX.htm'><span>Fascism</span></a></li>
+			<li><a href='/CxLibrary/Fundamentalism-22879CX.htm'><span>Fundamentalism</span></a></li>
+			<li><a href='/CxLibrary/Hate-Speech-23466CX.htm'><span>Hate Speech</span></a></li>
+			<li><a href='/CxLibrary/Neoconservativism-20520CX.htm'><span>Neoconservatism</span></a></li>
+			<li><a href='/CxLibrary/Neo-fascism-24192CX.htm'><span>Neo-fascism</span></a></li>
+			<li><a href='/CxLibrary/Racism-12339CX.htm'><span>Racism</span></a></li>
+			<li><a href='/CxLibrary/CX12593.htm'><span>Right</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxL-SEX.htm">Sexuality</a>
+		<ul>
+			<li><a href='/CxLibrary/Alternative-Sexual-Lifestyles-673CX.htm'><span>Alternative Sexual Lifestyles</span></a></li>
+			<li><a href='/CxLibrary/Bisexuality-1542CX.htm'><span>Bisexuality</span></a></li>
+			<li><a href='/CxLibrary/Marriage-9331CX.htm'><span>Marriage</span></a></li>
+			<li><a href='/CxLibrary/Open-Marriage-17445CX.htm'><span>Open Marriage</span></a></li>
+			<li><a href='/CxLibrary/Polyfidelity-17498CX.htm'><span>Polyfidelity/Polyamory</span></a></li>
+			<li><a href='/CxLibrary/Pornography-11662CX.htm'><span>Pornography</span></a></li>
+			<li><a href='/CxLibrary/Prostitution-12018CX.htm'><span>Prostitution</span></a></li>
+			<li><a href='/CxLibrary/Sexual-Behaviour-13446CX.htm'><span>Sexual Behaviour</span></a></li>
+			<li><a href='/CxLibrary/Fantasies-Sexual-5696CX.htm'><span>Sexual Fantasies</span></a></li>
+			<li><a href='/CxLibrary/Sexual-Freedom-13450CX.htm'><span>Sexual Freedom</span></a></li>
+			<li><a href='/CxLibrary/Sexual-Morality-13456CX.htm'><span>Sexual Morality</span></a></li>
+			<li><a href='/CxLibrary/Sexuality-13464CX.htm'><span>Sexuality</span></a></li>
+			<li><a href='/CxLibrary/Transsexuals-19670CX.htm'><span>Transsexuals</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxL-WAT.htm">Water</a>
+		<ul>
+			<li><a href='/CxLibrary/Dams-3905CX.htm'><span>Dams</span></a></li>
+			<li><a href='/CxLibrary/Drinking-Water-4480CX.htm'><span>Drinking Water</span></a></li>
+			<li><a href='/CxLibrary/Drought-4500CX.htm'><span>Droughts</span></a></li>
+			<li><a href='/CxLibrary/Groundwater-6882CX.htm'><span>Groundwater</span></a></li>
+			<li><a href='/CxLibrary/Marine-Environment-9218CX.htm'><span>Marine Environment</span></a></li>
+			<li><a href='/CxLibrary/Marine-Pollution-9235CX.htm'><span>Marine Pollution</span></a></li>
+			<li><a href='/CxLibrary/Oceans-10665CX.htm'><span>Oceans</span></a></li>
+			<li><a href='/CxLibrary/Rivers-18958CX.htm'><span>Rivers</span></a></li>
+			<li><a href='/CxLibrary/Water-15583CX.htm'><span>Water</span></a></li>
+			<li><a href='/CxLibrary/Water-Exports-15592CX.htm'><span>Water Exports</span></a></li>
+			<li><a href='/CxLibrary/Water-Pollution-15600CX.htm'><span>Water Pollution</span></a></li>
+			<li><a href='/CxLibrary/Water-Rights-23046CX.htm'><span>Water Rights</span></a></li>
+			<li><a href='/CxLibrary/Wetlands-15698CX.htm'><span>Wetlands</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxL-WOM.htm">Women</a>
+		<ul>
+			<li><a href='/CxLibrary/Aboriginal-Women-69CX.htm'><span>Aboriginal Women</span></a></li>
+			<li><a href='/CxLibrary/Feminism-5809CX.htm'><span>Feminism</span></a></li>
+			<li><a href='/CxLibrary/Immigrant-Women-7637CX.htm'><span>Immigrant Women</span></a></li>
+			<li><a href='/CxLibrary/Marxism-and-Feminism-24663CX.htm'><span>Marxism & Feminism</span></a></li>
+			<li><a href='/CxLibrary/Socialist-Feminism-24120CX.htm'><span>Socialist Feminism</span></a></li>
+			<li><a href='/CxLibrary/Women-15788CX.htm'><span>Women</span></a></li>
+			<li><a href='/CxLibrary/Women-in-the-Economy-15835CX.htm'><span>Women in the Economy</span></a></li>
+			<li><a href='/CxLibrary/Women-Work-15799CX.htm'><span>Women & Work</span></a></li>
+			<li><a href='/CxLibrary/Womens-History-15852CX.htm'><span>Women's History</span></a></li>
+			<li><a href='/CxLibrary/Womens-Movement-15873CX.htm'><span>Women's Movement</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub'>
+		<a href="/CxL-WRK.htm">Work/Workplace</a>
+		<ul>
+			<li><a href='/CxLibrary/Domestic-Labour-22575CX.htm'><span>Domestic Labour</span></a></li>
+			<li><a href='/CxLibrary/Housework-20623CX.htm'><span>Housework</span></a></li>
+			<li><a href='/CxLibrary/Farmworkers-20408CX.htm'><span>Farmworkers</span></a></li>
+			<li><a href='/CxLibrary/Informal-Work-Groups-24782CX.htm'><span>Informal Work Groups</span></a></li>
+			<li><a href='/CxLibrary/Mineworkers-Miners-23961CX.htm'><span>Mineworkers</span></a></li>
+			<li><a href='/CxLibrary/Older-Workers-10750CX.htm'><span>Older Workers</span></a></li>
+			<li><a href='/CxLibrary/Work-15913CX.htm'><span>Work</span></a></li>
+			<li><a href='/CxLibrary/Work-Hours-19191CX.htm'><span>Work Hours</span></a></li>
+			<li><a href='/CxLibrary/Workers-20745CX.htm'><span>Workers</span></a></li>
+			<li><a href='/CxLibrary/Workers-Control-15940CX.htm'><span>Workers' Control</span></a></li>
+			<li><a href='/CxLibrary/Workers-Co-operatives-15934CX.htm'><span>Workers' Co-operatives</span></a></li>
+			<li><a href='/CxLibrary/Working-Conditions-21858CX.htm'><span>Working Conditions</span></a></li>
+			<li><a href='/CxLibrary/Working-Life-18866CX.htm'><span>Working Life</span></a></li>
+			<li><a href='/CxLibrary/Working-Women-18351CX.htm'><span>Working Women</span></a></li>
+			<li><a href='/CxLibrary/Workplace-Health-Safety-15968CX.htm'><span>Workplace Health & Safety</span></a></li>
+			<li><a href='/CxLibrary/Workplace-Organizing-22476CX.htm'><span>Workplace Organizing</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub menuBorder'>
+		<a href="/CxLibrary/Docs/AboutConnexions.htm#socialmedia">Social media/community</a>
+		<ul>
+			<li><a href='https://www.facebook.com/ConnexionsOnline'><span>Facebook</span></a></li>
+			<li><a href='https://twitter.com/connexi0ns'><span>Twitter</span></a></li>
+			<li><a href='/Media/CxNewsletter.htm'><span>Connexions Newsletter</span></a></li>
+		</ul>
+	</li>
+	<li class='has-sub menuBorder'>
+		<a href="/CxLibrary/CxLANGIndex.htm">Other languages</a>
+		<ul>
+			<li><a href='/CxLibrary/Cx_ARB_TitleIndex.htm'><span>Arabic</span></a></li>
+			<li><a href='/CxLibrary/Cx_BUL_TitleIndex.htm'><span>Bulgarian</span></a></li>
+			<li><a href='/CxLibrary/Cx_CHN_TitleIndex.htm'><span>Chinese</span></a></li>
+			<li><a href='/CxLibrary/Cx_CZE_TitleIndex.htm'><span>Czech</span></a></li>
+			<li><a href='/CxLibrary/Cx_DAN_TitleIndex.htm'><span>Danish</span></a></li>
+			<li><a href='/CxLibrary/Cx_DUT_TitleIndex.htm'><span>Dutch</span></a></li>
+			<li><a href='/CxLibrary/Cx_ENG_TitleIndex.htm'><span>English</span></a></li>
+			<li><a href='/CxLibrary/Cx_EO_TitleIndex.htm'><span>Esperanto</span></a></li>
+			<li><a href='/CxLibrary/Cx_FAR_TitleIndex.htm'><span>Farsi</span></a></li>
+			<li><a href='/CxLibrary/Cx_FRE_TitleIndex.htm'><span>French</span></a></li>
+			<li><a href='/CxLibrary/Cx_GER_TitleIndex.htm'><span>German</span></a></li>
+			<li><a href='/CxLibrary/Cx_GRK_TitleIndex.htm'><span>Greek</span></a></li>
+			<li><a href='/CxLibrary/Cx_HUN_TitleIndex.htm'><span>Hungarian</span></a></li>
+			<li><a href='/CxLibrary/Cx_ITA_TitleIndex.htm'><span>Italian</span></a></li>
+			<li><a href='/CxLibrary/Cx_JAP_TitleIndex.htm'><span>Japanese</span></a></li>
+			<li><a href='/CxLibrary/Cx_KOR_TitleIndex.htm'><span>Korean</span></a></li>
+			<li><a href='/CxLibrary/Cx_LAT_TitleIndex.htm'><span>Latvian</span></a></li>
+			<li><a href='/CxLibrary/Cx_POL_TitleIndex.htm'><span>Polish</span></a></li>
+			<li><a href='/CxLibrary/Cx_POR_TitleIndex.htm'><span>Portuguese</span></a></li>
+			<li><a href='/CxLibrary/Cx_RUS_TitleIndex.htm'><span>Russian</span></a></li>
+			<li><a href='/CxLibrary/Cx_SLO_TitleIndex.htm'><span>Slovak</span></a></li>
+			<li><a href='/CxLibrary/Cx_SPA_TitleIndex.htm'><span>Spanish</span></a></li>
+			<li><a href='/CxLibrary/Cx_SV_TitleIndex.htm'><span>Swedish</span></a></li>
+			<li><a href='/CxLibrary/Cx_TUR_TitleIndex.htm'><span>Turkish</span></a></li>
+			<li><a href='/CxLibrary/Cx_VIE_TitleIndex.htm'><span>Vietnamese</span></a></li>
+		</ul>
+	</li>
+	<li>
+										<a href="/CxContactForm.php" class='menuBorder'>Contact</a>
+	</li>
+	<li class='has-sub'>
+		<a href="/Donate.htm">Donate</a>
+		<ul>
+			<li><a href='/Donate.htm'><span>Donate</span></a></li>
+			<li><a href='/CxLibrary/Docs2/Bequests.htm'><span>Bequests</span></a></li>
+		</ul>
+	</li>
+</ul>
+
+<hr style="" />
+<a href="/Donate.htm" target="_blank" style='display:block; margin:0; text-align:center; '>
+	<img src="http://www.connexions.org/Graphics/paypal.png" alt="paypal">
+</a>
+<hr style="" />
+
+</div>
+<!--- end: id=cssmenu -->
+
+</div>
+<!--- end: divContent -->
+
+</body></html>

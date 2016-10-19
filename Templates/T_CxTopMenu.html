@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AutoMenu.js template for Connexions Top Menu </title>
+<!-- original stylesheet: "http://www.connexions.org/css/dropdown2_1003.css" -->
+</head><body>
+
+<!-- begin: divContent -->
+<div id=divContent style='float:left; padding-bottom:10em; '>
+
+<div id="nav_background">
+<style>
+#nav_background{
+	background-color:#000; border:0; border-bottom:2px solid #900000;
+	height:32px;
+	/*padding-left:10em;
+	text-align:center;*/
+	margin:0;
+	width:100%;
+}
+/* redundant?
+.example {
+  position:relative;
+  background:#000;
+  height:32px;
+  border:0;
+  margin:0px auto;
+  padding:0px;
+  text-align:center;
+	border-radius:3px;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+ width:1211px;
+}
+*/
+
+/* top menu styles */
+.nav,.nav ul {
+	background:#000000;
+  list-style:none;
+  margin:0;
+  padding:0;
+  width:100%;
+}
+.nav {
+	margin:0 auto;
+  position:relative;
+  background-color: #000000;
+  width:1020px;	/* width must be set to center properly */
+}
+.nav ul {
+  height:0;
+  left:0;
+  overflow:hidden;
+  position:absolute;
+  top:32px;
+  z-index:100
+}
+.nav li {
+  float:left;
+  position:relative;
+}
+.nav li a {
+  -moz-transition:0.25s;
+  -o-transition:0.25s;
+  -webkit-transition:0.25s;
+  transition:0.25s;
+  background-color:#000000;
+  border:1px solid #800000;
+  color:#FFF;
+  display:block;
+  font-size:12px;
+  font-weight:bold;
+  line-height:20px;
+  padding:5px 20px;
+  text-align:left;
+  text-decoration:none;
+}
+.nav li:hover > a {
+    background:#CC0000;
+    border-color:#800000;
+    color:#fff;
+}
+
+.nav li:hover ul.subs {
+    height:auto;
+    width:200px;
+}
+
+.nav ul li {
+    -moz-transition:0.25s;
+    -o-transition:0.25s;
+    -webkit-transition:0.25s;
+    transition:0.25s;
+    opacity:0;
+    width:100%;
+}
+
+.nav li ul li {
+    -moz-transition-delay:0s;
+    -o-transition-delay:0s;
+    -webkit-transition-delay:0s;
+    transition-delay:0s;
+}
+
+.nav li:hover ul li {
+    opacity:1;
+    -moz-transition-delay:0.25s;
+    -o-transition-delay:0.25s;
+    -webkit-transition-delay:0.25s;
+    transition-delay:0.25s;
+}
+
+.nav ul li a {
+    background:#990000;
+    border-color:#800000;
+    color:#fff;
+    line-height:1px;
+    -moz-transition:1.5s;
+    -o-transition:1.5s;
+    -webkit-transition:1.5s;
+    transition:1.5s;
+}
+
+.nav li:hover ul li a {
+    line-height:20px;
+}
+.nav ul li a:hover {
+    background:#994d00;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 95%, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0)));
+    background-image: -moz-linear-gradient(-90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    background-image: -o-linear-gradient(-90deg,rgba(255,255,255,0.5),rgba(255,255,25,0));
+}
+</style>
+<!--div class="example"-->
+  <ul class="nav">
+    <li><a href="/home.htm">Home</a></li>
+    <li>
+    	<a href="/search/search.php">Search</a>
+      <ul class="subs">
+        <li><a href="/search/search.php">Search Connexions</a></li>
+        <li><a href="/CxLibrary/CxSubjectIndex.htm">Browse Subject Index</a></li>
+        <li><a href="/CxLibrary/CxTitleIndex.htm">Title Index A-Z</a></li>
+        <li><a href="/CxLibrary/CxAuthorIndex.htm">Authors A-Z</a></li>
+        <li><a href="/Groups/CxG_Az_Index.htm">Organization & Websites</a></li>
+        <li><a href="http://www.sources.com/Sources.htm"><i>Sources</i> Experts/Contacts</a></li>
+      </ul>
+    </li>
+    <li>
+    	<a href="/CxLibrary/CxTitleIndex.htm">Library</a>
+      <ul class="subs">
+        <li><a href="/CxLibrary/CxSubjectIndex.htm">Subject Index</a></li>
+        <li><a href="/CxLibrary/CxTitleIndex.htm">Title Index A-Z</a></li>
+        <li><a href="/CxLibrary/CxAuthorIndex.htm">Author Index A-Z</a></li>
+        <li><a href="/CxLibrary/CxYearIndex.htm">Chronological Index</a></li>
+        <li><a href="/CxLibrary/CxTypeIndex.htm">Format Index</a></li>
+        <li><a href="/CxLibrary/CxSpotlightIndex.htm">Spotlight: Most Popular</a></li>
+        <li><a href="/CxLibrary/CxDeweyIndex.htm">Dewey Index</a></li>
+        <li><a href="/CxLibrary/CxLOCIndex.htm">Library of Congress Classes</a></li>
+        <li><a href="/CxLibrary/Cx_GER_TitleIndex.htm">Deutsch</a></li>
+        <li><a href="/CxLibrary/Cx_SPA_TitleIndex.htm">Espanol</a></li>
+        <li><a href="/CxLibrary/Cx_FRE_TitleIndex.htm">Francais</a></li>
+      </ul>
+    </li>
+    <li>
+    	<a href="/Calendar/">Calendar</a>
+      <ul class="subs">
+        <li><a href="/SignInCx.htm">Submit an event</a></li>
+        <li><a href="/CxCalExpired_2015.htm">Expired Events</a></li>
+        <li><a href="/Calendar/cxCalendarRSS.rss">RSS Calendar</a></li>
+        <li><a href="http://calendar.sources.com/">Sources Calendar</a></li>
+        <li><a href="/Links/Link120a.htm">Other Calendars</a></li>
+        <li><a href="/CxLibrary/Docs/SeedsofFire.htm">Seeds of Fire chronology</a></li>
+      </ul>
+    </li>
+    <li>
+    	<a href="/Groups/CxG_Az_Index.htm">Directory</a>
+      <ul class="subs">
+        <li><a href="/Groups/CxG_Az_Index.htm">Organizations A-Z</a></li>
+        <li><a href="/CxLibrary/CxSubjectIndex.htm">Subject Index</a></li>
+        <li><a href="http://www.sources.com/Sources.htm">SOURCES media contacts</a></li>
+        <li><a href="/CxLibrary/Docs/CxAlternativeMediaList.htm">Alternative media</a></li>
+        <li><a href="/Questionnaire/">Include your group</a></li>
+      </ul>
+    </li>
+    <li>
+    	<a href="/CxLibrary/Docs/AboutConnexions.htm">Gateways</a>
+      <ul class="subs">
+        <li><a href="/CxL-ART.htm">Arts & Culture</a></li>
+        <li><a href="/CxL-ECO.htm">Economy</a></li>
+        <li><a href="/CxL-EDU.htm">Education</a></li>
+        <li><a href="/CxL-ENV.htm">Environment</a></li>
+        <li><a href="/CxL-HEA.htm">Health</a></li>
+        <li><a href="/CxL-HUM.htm">Human Rights</a></li>
+        <li><a href="/CxL-NAT.htm">Indigenous Peoples</a></li>
+        <li><a href="/CxL-DEV.htm">International</a></li>
+        <li><a href="/CxL-LAB.htm">Labour </a></li>
+        <li><a href="/CxL-ORG.htm">Organizing </a></li>
+        <li><a href="/CxL-MiddleEastResources.htm">Palestine/Israel</a></li>
+        <li><a href="/CxL-PEA.htm">Peace</a></li>
+        <li><a href="/CxL-PublicityMediainfo.htm">Publicity & Media Relations</a></li>
+        <li><a href="/CxL-RAC.htm">Race/Ethnicity/Identity</a></li>
+        <li><a href="/CxL-WOM.htm">Women</a></li>
+      </ul>
+    </li>
+    <li>
+    	<a href="/Connexipedia/CxPTitleIndex.htm">Connexipedia</a>
+      <ul class="subs">
+        <li><a href="/Connexipedia/CxPTitleIndex.htm">Title Index</a></li>
+        <li><a href="/CxLibrary/CxSubjectIndex.htm">Subject Index</a></li>
+        <li><a href="/CxLibrary/Persons-Listed-in-Connexipedia-24454CX.htm">Persons</a></li>
+        <li><a href="/CxLibrary/Organizations-Listed-in-Connex-24456CX.htm">Organization/Movements</a></li>
+        <li><a href="/CxLibrary/Events-Listed-in-Connexipedia-24455CX.htm">Events</a></li>
+        <li><a href="/CxLibrary/Docs/Quotes-A.htm">Quotations</a></li>
+      </ul>
+    </li>
+    <li><a href="/CxLibrary/Docs/SeedsofFire.htm">Seeds of Fire</a></li>
+    <li>
+    	<a href="http://www.sources.com/Sources.htm">Sources</a>
+      <ul class="subs">
+        <li><a href="http://www.sources.com">Sources</a></li>
+        <li><a href="http://www.sources.com/PowerfulTools.htm">Getting Publicity</a></li>
+        <li><a href="http://www.sources.com/SourcesFAQ.htm">FAQ</a></li>
+        <li><a href="http://gateway.sources.com/Membership1.php">Sign up now</a></li>
+        <li><a href="http://www.sources.com/MNN/">Media directory</a></li>
+        <li><a href="http://www.sources.com/PNN/">Government directory</a></li>
+        <li><a href="http://gateway.sources.com/">Submit news release</a></li>
+        <li><a href="http://www.sources.com/Sources.htm">Journalists' page</a></li>
+        <li><a href="http://www.sources.com/Listings/Li_Su_Index.htm">SOURCES Subject Index</a></li>
+        <li><a href="http://gateway.sources.com/ssosearch/search.php">Search SOURCES</a></li>
+      </ul>
+    </li>
+    <li>
+    	<a href="/CxLibrary/Docs/AboutConnexions.htm">About</a>
+	    <ul class="subs">
+	      <li><a href="/CxLibrary/Docs/AboutConnexions.htm">About Connexions</a></li>
+	      <li><a href="/CxLibrary/Docs/ConnexionsWikipedia.htm">Wiki article</a></li>
+	      <li><a href="/Donate.htm">Donate</a></li>
+	      <li><a href="/Volunteer.htm">Volunteer</a></li>
+	      <li><a href="/Archive/ArchiveCaseStatement-FND2085.htm">Archive space</a></li>
+	      <li><a href="/Media/CxNewsletter.htm">Connexions Newsletter</a></li>
+	    </ul>
+    </li>
+    <li><a href="/CxContactForm.php">Contact</a></li>
+  </ul>
+<!--/div-->
+
+</div>
+
+</div>
+<!-- end: divContent -->
+
+</body></html>
